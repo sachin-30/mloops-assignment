@@ -1,0 +1,26 @@
+stages:
+  preprocess:
+    cmd: python process.py
+    deps:
+      - process.py
+    outs:
+      - D:\MLOPS ASS=1\train.csv, index=False
+      - D:\MLOPS ASS=1\test.csv, index=False
+  train:
+    cmd: python train.py
+    outs:
+      - D:\MLOPS ASS=1\random_forest.pkl
+      - D:\MLOPS ASS=1\logistic_regression.pkl
+  evaluate:
+    cmd: python evaluate.py
+    deps:
+      - D:\MLOPS ASS=1\random_forest.pkl
+      - D:\MLOPS ASS=1\logistic_regression.pkl
+    metrics:
+      - metrics.json
+  driftdetection:
+    cmd: python driftdetection.py
+    deps:
+      - driftdetection.py
+    outs:
+      - drift_alert.log

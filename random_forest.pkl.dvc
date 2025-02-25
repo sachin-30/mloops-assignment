@@ -1,0 +1,5 @@
+outs:
+- md5: 63357c60df0bc1ad4553fe7289f1c539
+  size: 2160181
+  hash: md5
+  path: random_forest.pkl
