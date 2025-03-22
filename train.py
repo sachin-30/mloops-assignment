@@ -20,5 +20,6 @@ with open(r"D:\MLOPS ASS=1\random_forest.pkl", "wb") as f:
 with open(r"D:\MLOPS ASS=1\logistic_regression.pkl", "wb") as f:
     pickle.dump(pipeline_lr, f)
 print("✅ Models trained and saved.")
+print('sachin is a good boy')
 
 
